@@ -9,7 +9,7 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		try {
-			File folder = new File("uml_parser/src/uml_parser_test1/");
+			File folder = new File("uml_parser/uml_parser_test1/");
 			File[] listOfFiles = folder.listFiles();
 
 			for (int i = 0; i < listOfFiles.length; i++) {
