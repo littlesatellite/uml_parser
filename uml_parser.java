@@ -15,14 +15,14 @@ public class uml_parser {
       HashMap<String, Boolean> map;
       HashMap<String, String> mapClass;
       
-      //String toUML;
+      String toUML;
       
-//      uml_parser(String inPath, String outFile){
-//    	  this.inPath = inPath;
-//    	  this.outPath = inPath + "\\" + outFile + ".png";
-//    	  map = new HashMap<String,>
-//    	  
-//      }
+     uml_parser(String inPath, String outFile){
+   	  this.inPath = inPath;
+   	  this.outPath = inPath + "\\" + outFile + ".png";
+   	  map = new HashMap<String,>
+   	  
+     }
       
       inPath = /Users/jinchengcheng/Desktop/umlparser/uml-parser-test-1;
       
