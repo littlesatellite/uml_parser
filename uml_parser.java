@@ -26,7 +26,7 @@ public class uml_parser {
       
       inPath = /Users/jinchengcheng/Desktop/umlparser/uml-parser-test-1;
       
-      @SuppressWarnings("unused")
+      @SuppressWarnings("unused")//keep silence of some actions of the compiler
       public static void main(String[] args){
     	 System.out.println(getCuArray(inPath));
       }
