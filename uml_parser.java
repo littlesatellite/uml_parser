@@ -14,19 +14,20 @@ public class uml_parser {
       static String outPath;
       HashMap<String, Boolean> map;
       HashMap<String, String> mapClass;
-      String yumlCode;
+      String result;
       ArrayList<CompilationUnit> cuArray;
       
       String toUML;
       
      uml_parser(String inPath, String outFile){
+           result = "";
    	  this.inPath = inPath;
    	  this.outPath = inPath + "\\" + outFile + ".png";
-   	  map = new HashMap<String,>
-   	  
+   	  map = new HashMap<String, Boolean>();
+        
      }
       
-      inPath = /Users/jinchengcheng/Desktop/umlparser/uml-parser-test-1;
+      inPath = ../umlparser/uml-parser-test-1;
       
       @SuppressWarnings("unused")//keep silence of some actions of the compiler
       public static void main(String[] args){
