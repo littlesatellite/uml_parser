@@ -14,6 +14,7 @@ public class uml_parser {
       static String outPath;
       HashMap<String, Boolean> map;
       HashMap<String, String> mapClass;
+      String yumlCode;
       
       String toUML;
       
