@@ -34,18 +34,68 @@ public class uml_parser {
                  result +
      }
       
-      parser(CompilationUnit current){
+      private String parser(CompilationUnit current){
             String result = "";
             String className = "";
+            String classNameWithoutNotaion = "";
             String methods = "";
             String fields = "";
-            String additions = ",";
+            String add = ",";
             
-           ClassDeclaration cl = (ClassDeclaration) node;
-             className = "[";
+           ClassOrInterfaceDeclaration cl = (ClassOrInterfaceDeclaration) node;
+             
+            if (cl.isInterface()) {
             
-            InterfaceDeclaration in = (InterfaceDeclaration) node;
             className = "[" + "<<interface>>;";
+          
+            }
+            else{
+            
+            className = "[";
+            
+            }
+            className += cl.getName();
+            
+         
+            boolean next = false;
+            for(BodyDeclaration bd : ((TypeDeclaration) node).getMembers()){
+                  if(bd instanceof ConstructorDeclaration){
+                        ConstructorDeclaration cd = ((ConstructorDeclaration) bd);
+                        if(cd.getDeclarationAsString().startWith("public")&& !cl.isInterface()){
+                              if(next){
+                              methods += ";";
+                              }
+                              methods += "+ " + cd.getName() + "(";
+                              for(Object gcn : cd.getChildrenNodes()){
+                                    if(gcn instanceif Parameter){
+                                          Parameter para = (Parameter) gcn;
+                                          String PClass = para.getType().toString();
+                                          String PName = Para.getChildrenNodes().get(0).toString();
+                                          methods += PName + " : " + PClass;
+                                          if(map.containsKey(PClass) && !map.get(classNameWithoutNotation))
+                                          { add += "[" + classShortName + "] uses -.->";
+                                           if(map.get(PClass))
+                                                 add += "[<<interface>>;" + PClass + "]";
+                                           else
+                                                 add += "[" + PClass + "]";
+                                          }
+                                          add += ",";
+                                    }
+                              }
+                              methods += ")";
+                              next = true;
+                        }
+                  }
+            }
+            for(BodyDeclaration bd : ((TypeDeclaration) node).getMembers()){
+                  if(bd instanceof MethodDeclaration){
+                        MethodDeclaration md = ((MethodDeclaration) bd);
+                        if(md.getDeclarationAsString().startWith("public")&&!cl.isInterface()){
+                              if(md.getName().startWith("set")|| md.getName().startWith("get")){
+                                    String varName = md.getName().substring(3);
+                                    
+             
+             
             
             
       }
