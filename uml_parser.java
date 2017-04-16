@@ -15,7 +15,7 @@ public class uml_parser {
       HashMap<String, Boolean> map;
       HashMap<String, String> mapClass;
       String result;
-      ArrayList<CompilationUnit> cuArray;
+      ArrayList<CompilationUnit> CuArray;
       
       String toUML;
       
@@ -27,8 +27,28 @@ public class uml_parser {
         mapClass =  new HashMap<String,String>();
      }
       
-     
-      inPath = ../umlparser/uml-parser-test-1;
+     public void start() throws Exception {
+           cuArray = getCuArray(inpath);
+           yumlCode(cuArray);
+           for(CompilationUnit cu : cuArray)
+                 result +
+     }
+      
+      parser(CompilationUnit current){
+            String result = "";
+            String className = "";
+            String methods = "";
+            String fields = "";
+            String additions = ",";
+            
+           ClassDeclaration cl = (ClassDeclaration) node;
+             className = "[";
+            
+            InterfaceDeclaration in = (InterfaceDeclaration) node;
+            className = "[" + "<<interface>>;";
+            
+            
+      }
       
       @SuppressWarnings("unused")//keep silence of some actions of the compiler
       public static void main(String[] args){
