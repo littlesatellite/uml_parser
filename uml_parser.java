@@ -24,9 +24,10 @@ public class uml_parser {
    	  this.inPath = inPath;
    	  this.outPath = inPath + "\\" + outFile + ".png";
    	  map = new HashMap<String, Boolean>();
-        
+        mapClass =  new HashMap<String,String>();
      }
       
+     
       inPath = ../umlparser/uml-parser-test-1;
       
       @SuppressWarnings("unused")//keep silence of some actions of the compiler
