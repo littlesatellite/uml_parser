@@ -118,8 +118,51 @@ public class uml_parser {
                                           } else {
                                                 String methodBody[] = gcn.toString().split(" ");
                                                 for(String foo : methodBody){
-                                                      if(map.containskey( foo : methodBody){
-                                                            if(map.containskey(foo)
+                                                      if(map.containskey( body : methodBody){
+                                                            if(map.containskey(foo) && !map.get(classShortName)){
+                                                                  add += "[" + classShortName + "] uses -.->";
+                                                                  if(mao.get(foo))
+                                                                        add += "[<<interface>>;" + body + "]";
+                                                                  else
+                                                                        add += "[" + body + "]";
+                                                                  add += ",";
+                                                            }
+                                                      }
+                                                         }
+                                                         }
+                                                         methods += " ) : " + md.getType();
+                                                         next = true;
+                                                         }
+                                                         }
+                                                         }
+                                                         }
+                                                         
+                                                       boolean nextField = false;
+                                                         for(BodyDeclaration bd : ((TyoeDeclaration) node).getMembers()){
+                                                               if(bd instanceof FieldDeclaration){
+                                                                     FieldDeclaration fd = ((Fielddeclaration) bd);
+                                                                     String fieldScope = aToSymScope(
+                                                                           bd.toStringWithoutComments().substring(0,bd.toStringWithoutComments()indexOf(" ")));
+                                                                     String fieldClass = changeBrackets(fd.getType().toString());
+                                                                     String fieldName = fd.getChildrenNodes().get(1).toString();
+                                                                  if(fieldScope.equals("-") && makeFieldPublic.contains(fieldName.toLowerCase())){
+                                                                      fiedScope = "+";
+                                                                  }
+                                                                     String getDepen = "";
+                                                                     boolean getDepenMultiple = "false";
+                                                                     if(fieldClass.contains("(")){
+                                                                           getDepen = fieldClass.substring(fieldclass.indexOf("(") + 1,fieldClass.indexOf(")"));
+                                                                           getDepenMultiple = true;
+                                                                     }
+                                                                     else if (map.containsKey(fieldClass)){
+                                                                           getDepen = fieldClass;
+                                                                     }
+                                                                     if(getDepen.length() > 0 && map.containsKey(getDepen)){
+                                                                           String connection = "-";
+                                                                           
+                                                                           if(mapClassConn.containsKey(getDepen + "-" + classShortName)){
+                                                                                 connection = mapClassConn.get(
+                                                     
                                                 
                     
                                     
