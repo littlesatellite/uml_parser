@@ -42,6 +42,8 @@ public class uml_parser {
             String fields = "";
             String add = ",";
             
+            ArrayList<String> 
+            
            ClassOrInterfaceDeclaration cl = (ClassOrInterfaceDeclaration) node;
              
             if (cl.isInterface()) {
@@ -93,6 +95,33 @@ public class uml_parser {
                         if(md.getDeclarationAsString().startWith("public")&&!cl.isInterface()){
                               if(md.getName().startWith("set")|| md.getName().startWith("get")){
                                     String varName = md.getName().substring(3);
+                                    makeFieldPublic.add(varName.toLowerCase());
+                              }else{
+                                    if(next)
+                                          methods += ";";
+                                    methods += "+" + md.getName() + "(";
+                                    for(Object gcn : md.getChildrenNode()){
+                                          if(gcn instanceof Parameter){
+                                                Parameter param = (Parameter) gcn;
+                                                String PClass = paramCast.getType().toString();
+                                                String PName = paramCast.getTChildrenNodes().get(0).toString();
+                                                methods += PName + " : " PClass;
+                                                if(map.containsKey(PClass) && !map.get(classShortName)){
+                                                      add += "[" + classShortName + "] uses -.->";
+                                                      if(map.get(PClass))
+                                                            add += "[<<interface>>;" + PClass + "]";
+                                                      else 
+                                                            add += "[" + PClass + "]";
+                                                }
+                                                add += ",";
+                      
+                                          } else {
+                                                String methodBody[] = gcn.toString().split(" ");
+                                                for(String foo : methodBody){
+                                                      if(map.containskey( foo : methodBody){
+                                                            if(map.containskey(foo)
+                                                
+                    
                                     
              
              
