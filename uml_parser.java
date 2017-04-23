@@ -189,8 +189,7 @@ public class uml_parser {
     				 cu = JavaParser.parse(in);
     				 cuArray.add(cu);
     			 }finally{
-                         
-    				 in.close();
+                        in.close();
     			 }
     		 }
     	 }
