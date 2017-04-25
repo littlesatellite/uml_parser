@@ -1,2 +1,3 @@
 # uml_parser
-ump_parser parse the source code into readable  language
+This is the personal project prepare for CMPE202
+
